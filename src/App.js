@@ -5,48 +5,47 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className ="mtitle">WIT Week2 Project by YouTak</div>
-        <div className="content-box">
-          <div className="box1" id ="firstbox">
+        <div className="content-box" id ="con_box_first">
+          <div className="box1">
             <div className="inner_box1">
-            <div className="row"> 
-              <span className="bt">User</span>
-              <span className="btext"></span>
-            </div>
-            <div className="row">
-              <span className="bt">Title</span>
-              <span className="btext"></span>
-            </div>
-            <div className="row rbody">
-              <span className="bt">Body</span>
-              <span className="btext"></span>
-            </div>
+              <div className="row"> 
+                <span className="bt">User</span>
+                <span className="btext"></span>
+              </div>
+              <div className="row">
+                <span className="bt">Title</span>
+                <span className="btext"></span>
+              </div>
+              <div className="row rbody">
+                <span className="bt">Body</span>
+                <span className="btext"></span>
+              </div>
             </div>
           </div>
-          <div className="box2" id="secondbox">
-          <div className="inner_box1">
-            <div className="row"> 
-              <span className="bt">User</span>
-              <span className="btext"></span>
-            </div>
-            <div className="row">
-              <span className="bt">Title</span>
-              <span className="btext"></span>
-            </div>
-            <div className="row rbody">
-              <span className="bt">Body</span>
-              <span className="btext"></span>
-            </div>
-            <div className="remail">
-              <div className="add_bar">ㄴ</div>
-              <div className = "remail_box" id ="commentbox">
-                <div className="remail_r">
-                  <span className="com_name">name</span>
-                  <span className="bemail">email</span>
+          <div className="box2">
+            <div className="inner_box1">
+              <div className="row"> 
+                <span className="bt">User</span>
+                <span className="btext"></span>
+              </div>
+              <div className="row">
+                <span className="bt">Title</span>
+                <span className="btext"></span>
+              </div>
+              <div className="row rbody">
+                <span className="bt">Body</span>
+                <span className="btext"></span>
+              </div>
+              <div className="remail">
+                <div className="add_bar">ㄴ</div>
+                <div className = "remail_box">
+                  <div className="remail_r">
+                    <span className="com_name">name</span>
+                    <span className="bemail">email</span>
+                  </div>
+                    <div className= "remail_r bcomment">comment body</div>
                 </div>
-                  <div className= "remail_r bcomment">comment body</div>
-                </div>
-            </div>
-
+              </div>
             </div>
           </div>
         </div>
@@ -59,9 +58,11 @@ function App() {
 fetch('https://jsonplaceholder.typicode.com/posts/')
   .then((response) => response.json())
   .then((data) => {
-    let boxlist = document.getElementById('firstbox');
+    let boxlist = document.getElementById('con_box_first').firstChild;
+    // boxlist = box1
     let rowlist = boxlist.firstChild.firstChild;
-
+    // rowlist = row
+    
     for(let i=0; i<1; i++){
     rowlist = boxlist.firstChild.firstChild;
     rowlist.lastChild.textContent = data[i].id;
@@ -79,8 +80,8 @@ fetch('https://jsonplaceholder.typicode.com/posts/')
   fetch('https://jsonplaceholder.typicode.com/comments')
   .then((response) => response.json())
   .then((data) => {
-    let commentlist = document.getElementById('commentbox');
-
+    let commentlist = document.getElementById('con_box_first').lastChild.lastChild.lastChild.lastChild;
+    // commentlist = remail_box
     for(let i=0; i<1; i++){
       commentlist.firstChild.firstChild.textContent=data[i].name;
       commentlist.firstChild.lastChild.textContent=data[i].email;
