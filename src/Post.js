@@ -4,9 +4,9 @@ function Post({postData}) {
 
 
   return(
+    
   <div className="App">
     <header className="App-header">
-      <div className ="mtitle">WIT Week2 by YouTak</div>
       <div className="content-box" id ="con_box_first">
         <div className="box1">
           <div className="inner_box1">

@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
   font-size: calc(10px + 2vmin);
   color: black;
 
@@ -21,8 +22,11 @@
 .mtitle{
   font-size: x-large;
   font-weight: bold;
-  margin-top: 100px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.content-box{
+  margin-bottom: 50px;
 }
 
 .box1{
